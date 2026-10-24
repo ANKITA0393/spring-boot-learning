@@ -1,6 +1,5 @@
 package org.practice;
 
-import org.practice.Notification.EmailService;
 import org.practice.Notification.NotificationService;
 
 public class OrderService {
