@@ -5,14 +5,17 @@ import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Component;
 
 @Component
-@Lazy(value = false)
+@Lazy
 public class PaymentService {
 
-    public PaymentService() {
-        System.out.println("PaymentService created");
+    OrderService orderService;
+
+    public PaymentService(@Lazy OrderService  orderService ) {
+        this.orderService = orderService;
     }
 
     public void pay(){
-        System.out.println("Payment succesful");
+        System.out.println("Payment successful");
+        orderService.getOrderDetails();
     }
 }
