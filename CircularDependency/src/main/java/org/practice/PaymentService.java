@@ -6,11 +6,12 @@ import org.springframework.stereotype.Component;
 @Component
 public class PaymentService {
 
-    @Autowired
-    OrderService orderService;      //Field injection
+//    @Autowired
+//    OrderService orderService;      //Field injection
 
     public void pay(){
         System.out.println("Payment done");
-        orderService.getDetails();
+        //not its responsibility
+        //orderService.getDetails();
     }
 }

@@ -11,6 +11,8 @@ public class OrderService {
 
         public void placeOrder(){
             paymentService.pay();
+            //call here instead if calling in PaymentService
+            getDetails();
             System.out.println("Order placed");
         }
 
