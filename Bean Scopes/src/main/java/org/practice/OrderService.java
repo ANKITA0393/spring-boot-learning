@@ -1,17 +1,20 @@
 package org.practice;
 
-import org.springframework.context.annotation.Scope;
+import org.springframework.context.annotation.Lazy;
 import org.springframework.stereotype.Component;
 
 @Component
-@Scope
+ @Lazy       //creates object only when called
 public class OrderService {
+    PaymentService paymentService;
 
-    public OrderService(){
+    public OrderService(@Lazy PaymentService paymentService){
+        this.paymentService = paymentService;
         System.out.println("OrderService created");
     }
 
     public void placeOrder(){
-        System.out.println("Order Placed");
+        paymentService.pay();
+        System.out.println("Order placed");
     }
 }

@@ -8,10 +8,7 @@ public class Main {
         ApplicationContext context = new AnnotationConfigApplicationContext(AppConfig.class);
 
         OrderService order = context.getBean(OrderService.class);
-        OrderService order2 = context.getBean(OrderService.class);
-
-        System.out.println(order == order2);  //true(singleton scope used), false(prototype scope used)
-
-
-    }
+        order.placeOrder();
+//        PaymentService payment = context.getBean(PaymentService.class);
+        }
 }
