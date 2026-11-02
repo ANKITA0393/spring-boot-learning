@@ -13,8 +13,6 @@ public class SpringBootAppPropertiesApplication {
 
         PaymentGateway paymentGateway = context.getBean(PaymentGateway.class);
 
-        paymentGateway.setType("Paytm");
-        paymentGateway.setRetryCount(5);
         System.out.println(paymentGateway.getType());
         System.out.println(paymentGateway.getRetryCount());
 	}

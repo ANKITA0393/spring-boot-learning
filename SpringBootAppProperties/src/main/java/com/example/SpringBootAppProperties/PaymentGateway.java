@@ -1,11 +1,18 @@
 package com.example.SpringBootAppProperties;
 
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
 
 @Component
 public class PaymentGateway {
     private String type;
     private int retryCount;
+
+    public PaymentGateway(@Value("${paymentGateway.type}")String type,
+                          @Value("${paymentGateway.retry-count}")int retryCount) {
+        this.type = type;
+        this.retryCount = retryCount;
+    }
 
     public String getType() {
         return type;
