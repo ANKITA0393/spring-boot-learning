@@ -27,4 +27,11 @@ public class PaymentGateway {
     public int getTimeout() {
         return paymentProperties.getTimeout();
     }
+
+    public void print(){
+        System.out.println(getType());
+        System.out.println(getRetryCount());
+        System.out.println(isEnabled());
+        System.out.println(getTimeout());
+    }
 }
